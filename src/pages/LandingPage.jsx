@@ -3,19 +3,26 @@ import './LandingPage.css';
 import Balloon from '../components/Balloon';
 import Picture from '../assets/Big.jpg';
 import Picture2 from '../assets/Big2.jpg';
+import img01 from '../assets/01.jpg';
+import img02 from '../assets/02.jpg';
+import img03 from '../assets/03.jpg';
+import img04 from '../assets/04.jpg';
+import img05 from '../assets/05.jpg';
+import img06 from '../assets/06.jpg';
+
 
 function LandingPage() {
   
   // Sample birthday card designs for the gallery
   const cardGallery = [
-    { id: 1, src: 'src/assets/01.jpg', alt: 'Pink birthday card with balloons' },
-    { id: 2, src: 'src/assets/02.jpg', alt: 'Birthday card with confetti' },
-    { id: 3, src: 'src/assets/03.jpg', alt: 'Elegant birthday card design' },
-    { id: 4, src: 'src/assets/04.jpg', alt: 'Birthday card with cake' },
-    { id: 5, src: 'src/assets/06.jpg', alt: 'Birthday card with candles' },
-    { id: 6, src: 'src/assets/05.jpg', alt: 'Fun birthday card design' },
+    { id: 1, src: img01, alt: 'Pink birthday card with balloons' },
+    { id: 2, src: img02, alt: 'Birthday card with confetti' },
+    { id: 3, src: img03, alt: 'Elegant birthday card design' },
+    { id: 4, src: img04, alt: 'Birthday card with cake' },
+    { id: 5, src: img05, alt: 'Birthday card with candles' },
+    { id: 6, src: img06, alt: 'Fun birthday card design' },
   ];
-
+  
   return (
     <div className="birthday-container">
       {/* Balloons with different colors and positions - perfect for birthday theme */}
@@ -35,10 +42,7 @@ function LandingPage() {
           <div className="left-panel">
             <h1 className="main-title">Happy Birthday Min Min</h1>
             <p className="description">
-              Design a personalized birthday card that's as special as they are!
-              Add your heartfelt message, choose from beautiful designs, and create
-              a memorable birthday surprise that will bring joy and smiles.
-              Make their special day even more magical!
+              Chuc mung sinh Min Min cute pho mai que hihihihihihihhhihihihihihihihih
             </p>
 
             <div className="gallery">
