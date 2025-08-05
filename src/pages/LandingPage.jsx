@@ -1,26 +1,20 @@
 import { useState } from 'react';
 import './LandingPage.css';
 import Balloon from '../components/Balloon';
-import Picture from '../assets/Picture.jpg';
+import Picture from '../assets/Big.jpg';
+import Picture2 from '../assets/Big2.jpg';
 
 function LandingPage() {
-  const [message, setMessage] = useState('');
   
   // Sample birthday card designs for the gallery
   const cardGallery = [
-    { id: 1, src: 'https://placehold.co/300x240/FFC0CB/white?text=Happy+Birthday!', alt: 'Pink birthday card with balloons' },
-    { id: 2, src: 'https://placehold.co/300x240/FFB6C1/white?text=Celebration+Time!', alt: 'Birthday card with confetti' },
-    { id: 3, src: 'https://placehold.co/300x240/FF69B4/white?text=Special+Day!', alt: 'Elegant birthday card design' },
-    { id: 4, src: 'https://placehold.co/300x240/FFB6C1/white?text=Another+Year!', alt: 'Birthday card with cake' },
-    { id: 5, src: 'https://placehold.co/300x240/FFC0CB/white?text=Make+a+Wish!', alt: 'Birthday card with candles' },
-    { id: 6, src: 'https://placehold.co/300x240/FF69B4/white?text=Party+Time!', alt: 'Fun birthday card design' },
+    { id: 1, src: 'src/assets/01.jpg', alt: 'Pink birthday card with balloons' },
+    { id: 2, src: 'src/assets/02.jpg', alt: 'Birthday card with confetti' },
+    { id: 3, src: 'src/assets/03.jpg', alt: 'Elegant birthday card design' },
+    { id: 4, src: 'src/assets/04.jpg', alt: 'Birthday card with cake' },
+    { id: 5, src: 'src/assets/06.jpg', alt: 'Birthday card with candles' },
+    { id: 6, src: 'src/assets/05.jpg', alt: 'Fun birthday card design' },
   ];
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Creating birthday card with message:', message);
-    // In a real app, this would call an API to generate the birthday card
-  };
 
   return (
     <div className="birthday-container">
@@ -39,26 +33,13 @@ function LandingPage() {
       <div className="birthday-content">
         <div className="birthday-main">
           <div className="left-panel">
-            <h1 className="main-title">Create the perfect birthday gift card</h1>
+            <h1 className="main-title">Happy Birthday Min Min</h1>
             <p className="description">
               Design a personalized birthday card that's as special as they are!
               Add your heartfelt message, choose from beautiful designs, and create
               a memorable birthday surprise that will bring joy and smiles.
               Make their special day even more magical!
             </p>
-
-            <form className="prompt-form" onSubmit={handleSubmit}>
-              <div className="input-container">
-                <input 
-                  type="text"
-                  placeholder="Write your birthday message..."
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="prompt-input"
-                />
-                <button type="submit" className="prompt-button">→</button>
-              </div>
-            </form>
 
             <div className="gallery">
               {cardGallery.map(card => (
@@ -74,6 +55,13 @@ function LandingPage() {
               <img 
                 src={Picture} 
                 alt="Beautiful birthday card with decorations" 
+                className="featured-image"
+              />
+            </div>
+            <div className="featured-card">
+              <img 
+                src={Picture2} 
+                alt="Additional birthday decoration" 
                 className="featured-image"
               />
             </div>
