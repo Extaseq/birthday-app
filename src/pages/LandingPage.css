@@ -1,0 +1,236 @@
+.birthday-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  font-family: 'Quicksand', 'Arial Rounded MT Bold', sans-serif;
+}
+
+.birthday-content {
+  width: 90%;
+  max-width: 1200px;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
+}
+
+.birthday-main {
+  display: flex;
+  flex: 1;
+  gap: 40px;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-right: 20px;
+}
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #ff6b9b;
+  line-height: 1.2;
+  margin: 20px 0 25px 0;
+}
+
+.description {
+  color: #777;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  max-width: 90%;
+}
+
+.input-container {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  width: 90%;
+}
+
+.prompt-input {
+  flex: 1;
+  padding: 14px 25px;
+  border: 2px solid rgba(255, 192, 203, 0.5);
+  border-radius: 30px;
+  font-size: 1.1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.prompt-input:focus {
+  border-color: #ff6b9b;
+  box-shadow: 0 0 10px rgba(255, 107, 155, 0.3);
+}
+
+.prompt-button {
+  width: 40px;
+  height: 40px;
+  margin-left: -40px;
+  background: #ff6b9b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.prompt-button:hover {
+  background: #ff4785;
+  transform: scale(1.05);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1/0.8;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 107, 155, 0.3);
+}
+
+.featured-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+.featured-image {
+  max-width: 100%;
+  max-height: 95%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(255, 107, 155, 0.25);
+  object-fit: cover;
+}
+
+/* Petals animation */
+.petal {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 182, 193, 0.6);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: float 10s linear infinite;
+  z-index: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .birthday-main {
+    flex-direction: column;
+  }
+  
+  .right-panel {
+    order: -1;
+    margin-bottom: 20px;
+  }
+  
+  .featured-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .birthday-content {
+    padding: 15px;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  nav ul {
+    gap: 10px;
+  }
+}
+
+/* Reuse balloon styles from Login.css */
+.balloons-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Meme popup style in case we need it later */
+.meme-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  max-height: 80%;
+  z-index: 1000;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}

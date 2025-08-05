@@ -1,0 +1,174 @@
+.login-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; 
+}
+
+/* Balloon animations */
+.balloons-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Override balloon animations with different speeds */
+.balloons-container .balloon {
+  animation-name: floatUp;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* Apply different animation durations and delays */
+.balloons-container .balloon:nth-child(1) { animation-duration: 15s; animation-delay: 0s; }
+.balloons-container .balloon:nth-child(2) { animation-duration: 11s; animation-delay: 2s; }
+.balloons-container .balloon:nth-child(3) { animation-duration: 13s; animation-delay: 1s; }
+.balloons-container .balloon:nth-child(4) { animation-duration: 10s; animation-delay: 3s; }
+.balloons-container .balloon:nth-child(5) { animation-duration: 14s; animation-delay: 0.5s; }
+.balloons-container .balloon:nth-child(6) { animation-duration: 12s; animation-delay: 2.5s; }
+.balloons-container .balloon:nth-child(7) { animation-duration: 16s; animation-delay: 1.5s; }
+.balloons-container .balloon:nth-child(8) { animation-duration: 12s; animation-delay: 3.5s; }
+.balloons-container .balloon:nth-child(9) { animation-duration: 14s; animation-delay: 0.2s; }
+.balloons-container .balloon:nth-child(10) { animation-duration: 13s; animation-delay: 2.8s; }
+.balloons-container .balloon:nth-child(11) { animation-duration: 11s; animation-delay: 1.8s; }
+.balloons-container .balloon:nth-child(12) { animation-duration: 15s; animation-delay: 0.7s; }
+.balloons-container .balloon:nth-child(13) { animation-duration: 10s; animation-delay: 2.2s; }
+.balloons-container .balloon:nth-child(14) { animation-duration: 12s; animation-delay: 1.2s; }
+
+.glass-panel {
+  /* background: rgba(255, 255, 255, 0.2); */
+  background: linear-gradient(
+  rgba(255, 255, 255, 0.15),
+  rgba(255, 255, 255, 0.05)
+  );
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 10; /* Ensure the glass panel is above the balloons */
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.title {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.input-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: none;
+  background: rgba(123, 97, 255, 0.6);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background: rgba(123, 97, 255, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.meme-popup {
+  position: fixed;
+  top: 200px;
+  width: 500px;
+  opacity: 0;
+  animation: fadeInOut 1s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(50px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(50px); }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
